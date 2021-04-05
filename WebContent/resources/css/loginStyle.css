@@ -1,0 +1,36 @@
+body {
+	background-color: #4285F4;
+}
+
+h1 {
+	color: red;
+}
+
+hr {
+	height: 2px;
+	width: 98%;
+	margin: auto;
+	color: black;
+	margin-bottom: 15px;
+}
+
+.center-text {
+	text-align: center;
+}
+
+.error {
+	color: red;
+}
+
+.loginForm {
+	width: 30%;
+	margin: auto;
+}
+.row{
+	margin: 5px;
+}
+.button-bar{
+	padding-top:15px;
+	width: 90%;
+	margin: auto;
+}
