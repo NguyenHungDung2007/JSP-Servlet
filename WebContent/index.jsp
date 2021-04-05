@@ -17,19 +17,19 @@
 	<h6 style="margin-left: 15px"> CustomerSystem > Login</h6>
 		<div class="center-text">
 			<h5 class="center-text">LOGIN</h5>
-			<label id="error">Error messages</label>
+			<label style="display: none" id="error">Error messages</label>
 		</div>
 
-		<form class="loginForm" action="">
+		<form name="loginform" onsubmit="return(validateForm())" class="loginForm" action="" method="get" >
 			
 			<div class="row">
 				<label class="col-md-4" for="fname">User ID:</label>
-				<input class="col-md-8" type="text" id="fname" name="fname">
+				<input class="col-md-8" type="text" id="txtUserID" name="txtUserID">
 			</div>
 			
 			<div class="row">
 				<label class="col-md-4" for="fname">PassWord:</label>
-				<input class="col-md-8" type="password" id="fname" name="fname">
+				<input class="col-md-8" type="password" id="txtPassword" name="txtPassword">
 			</div>
 			<div class="button-bar">
 				<input type="submit" value="Submit">
@@ -47,6 +47,27 @@
 <script>
 function myFunction() {
 	document.getElementById("error").style.display = "none";
+}
+
+function validateForm(){
+	var id = document.forms["loginform"]["txtUserID"].value;
+	var pass = document.forms["loginform"]["txtPassword"].value;
+	var error = document.getElementById("error");
+	
+	if (id.trim() == "") {
+		error.innerHTML = 'ID required !!!';
+		error.style.display = "block";
+	    return false;
+	}
+	if (pass.trim() == "") {
+		if(pass.length > 0){
+			error.innerHTML = 'Invalid Password !!!';
+			return false;
+		}
+		error.innerHTML = 'Password required !!!';
+		error.style.display = "block";
+	    return false;
+	}
 }
 </script>
 </body>
